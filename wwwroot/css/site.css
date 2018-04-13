@@ -1,0 +1,104 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+#borderless td{
+    border: none;
+}
+#borderless2 td{
+    border: none;
+}
+
+tr > :first-child{
+    text-align: right;
+}
+
+.error{
+    color: red;
+}
+
+#texta, #textb{
+    width: 100%;
+}
+
+#texta{
+    height: 155px;
+    font-size: 20px;
+}
+
+.comments{
+    margin-left: 30px;
+}
+
+.content{
+    margin-left: 20px;
+}
+
+.name{
+    font-weight: bold;
+}
+
+form{
+    margin-bottom: 35px;
+    margin-top: 20px;
+}
+
+.bluebutton, .greenbutton{
+    float: right;
+    color: white;
+}
+
+.bluebutton{
+    background-color: steelblue;
+}
+
+.greenbutton{
+    background-color: seagreen;
+}
+
+h5{
+    font-size: 16px;
+    font-weight: bold;
+    color: gray;
+}
+
+h3{
+    font-weight: bold;
+    color: gray;
+    margin-bottom: -10px;
+}
+
+.jumbotron{
+    background-image: url("images/wall.jpeg");
+}

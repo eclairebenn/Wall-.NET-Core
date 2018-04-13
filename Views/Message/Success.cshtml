@@ -1,0 +1,37 @@
+@model the_wall.Models.Message
+<div class="jumbotron text-center">
+  <h2>the wall</h2>
+</div>
+<h2>Hi, @ViewBag.User["firstname"]!</h2>
+
+<h3>Post a message : </h3>
+<form asp-controller="Message" asp-action="PostMessage" method="post">
+    <textarea id="texta" asp-for="content"></textarea>
+    <input type="hidden" name="user_id" value='@ViewBag.User["id"]'>
+    <input class="bluebutton" type="submit" value="Post a Message">
+</form>
+
+@foreach(var message in @ViewBag.messages)
+{
+  <h4 class="name">@message["firstname"] @message["lastname"] - @message["created_at"].ToString("MMMM dd, yyyy")</h4>
+  <h4 class="content">@message["content"]</h4>
+  <div class="comments">
+    <hr>
+    @foreach(var comment in @ViewBag.comments)
+    {
+      @if(comment["message_id"] == message["id"])
+      {
+        <h4 class="name">@comment["firstname"] @comment["lastname"] - @comment["created_at"].ToString("MMMM dd, yyyy")</h4>
+        <h4>@comment["content"]</h4>
+      }
+    }
+    <form action="/post/comment" method="post">
+      <h5>Post a Comment : </h5>
+      <textarea id="textb" name="comment"></textarea>
+      <input type="hidden" name="user_id" value='@ViewBag.User["id"]'>
+      <input type="hidden" name="message_id" value='@message["id"]'>
+      <input class="greenbutton" type="submit" value="Post a Comment">
+    </form>  
+  </div>
+
+}
